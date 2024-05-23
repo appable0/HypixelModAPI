@@ -12,7 +12,7 @@ const registry = {
 
   "hypixel:ping": new PacketHandler(packet => {
     const response = packet.readString()
-    emitter.emit("ping", response)
+    emitter.emit("pong", response)
   }, 1),
 
   "hypixel:party_info": new PacketHandler(packet => {

@@ -20,7 +20,7 @@ type LocationResponse = {
 
 type EventArguments = {
   hello: [environment: Environment]
-  ping: [response: string]
+  pong: [response: string]
   partyInfo: [PartyInfoResponse] // Replace arg3Type with actual type for event2
   playerInfo: [PlayerInfoResponse] // Replace arg3Type with actual type for event2
   location: [LocationResponse]
@@ -33,7 +33,7 @@ declare class ModAPI {
   on<K extends EventType>(event: K, listener: (...args: EventArguments[K]) => void): void
   once<K extends EventType>(event: K, listener: (...args: EventArguments[K]) => void): void
   off<K extends EventType>(event: K, listener: (...args: EventArguments[K]) => void): void
-  requestPing(): void
+  ping(): void
   requestPlayerInfo(): void
   requestPartyInfo(): void
   setLogging(shouldLog: boolean): void

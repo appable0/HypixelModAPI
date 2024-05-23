@@ -4,6 +4,11 @@ import { emitter } from "./emitter.js"
 import { PacketSender } from "./packet/PacketSender.js"
 import { Logger } from "./utils/Logger.js"
 
+import "./listeners/eventLoggerListener.js"
+import "./listeners/commandListener.js"
+import "./listeners/packetListener.js"
+import "./listeners/subscriptionListener.js"
+
 class ModAPI {
   on(event, listener) {
     emitter.on(event, listener)
@@ -17,7 +22,7 @@ class ModAPI {
     emitter.off(event, listener)
   }
 
-  requestPing() {
+  ping() {
     return PacketSender.sendPing()
   }
 
@@ -34,8 +39,3 @@ class ModAPI {
 }
 
 export const HypixelModAPI = new ModAPI()
-
-import "./listeners/eventLoggerListener.js"
-import "./listeners/commandListener.js"
-import "./listeners/packetListener.js"
-import "./listeners/subscriptionListener.js"

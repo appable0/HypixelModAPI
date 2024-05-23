@@ -52,7 +52,9 @@ function sendPlayerInfo() {
 function sendPacket(packet) {
   const netHandler = Client.getMinecraft().func_147114_u()
   if (!netHandler) return false
-  netHandler.func_147297_a(packet)
+  Client.scheduleTask(1, () => {
+    netHandler.func_147297_a(packet)
+  })
   return true
 }
 
