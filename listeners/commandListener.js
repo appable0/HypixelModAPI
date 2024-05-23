@@ -1,4 +1,3 @@
-import { emitter } from "../emitter.js"
 import { PacketSender } from "../packet/PacketSender.js"
 
 const mapping = {

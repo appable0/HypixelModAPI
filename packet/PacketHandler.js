@@ -1,3 +1,4 @@
+import { emitter } from "../emitter.js"
 import { Logger } from "../utils/Logger.js"
 import { PacketReader } from "../utils/PacketReader.js"
 
@@ -26,6 +27,7 @@ export class PacketHandler {
       const errorId = packet.readVarInt()
       const error = errors[errorId]
       Logger.log(`Packet error: ${error}`)
+      emitter.emit("error", error)
       return
     }
 

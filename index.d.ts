@@ -24,6 +24,7 @@ type EventArguments = {
   partyInfo: [PartyInfoResponse] // Replace arg3Type with actual type for event2
   playerInfo: [PlayerInfoResponse] // Replace arg3Type with actual type for event2
   location: [LocationResponse]
+  error: [reason: string]
 }
 
 type EventType = keyof EventArguments

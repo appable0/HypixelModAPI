@@ -10,7 +10,7 @@ function setLogging(shouldLog) {
 
 function log(data) {
   if (!isLogging) return
-  console.log(`[LocationAPI] ${data}`)
+  console.log(`[HypixelModAPI] ${data}`)
 }
 
 export const Logger = {
