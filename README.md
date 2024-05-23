@@ -1,7 +1,9 @@
 # HypixelModAPI (ChatTriggers)
 An implementation of the preview [Hypixel Mod API](https://github.com/HypixelDev/ModAPI) for ChatTriggers, intended for use as a library in other modules.
 
-Supports all features of the Hypixel Mod API, including automatically subscribing to location events when joining Hypixel. The `HypixelModAPI` export is fully typed.
+Supports all features of the Hypixel Mod API, including automatically subscribing to location events when joining Hypixel. 
+
+Exports `HypixelModAPI` for adding listeners, sending packets, and setting configuration.
 
 ## Example
 ```js
