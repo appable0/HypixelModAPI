@@ -9,7 +9,7 @@ const Unpooled = Java.type("io.netty.buffer.Unpooled")
 export class PacketReader {
   constructor(packet) {
     this.identifier = packet.func_149169_c()
-    this.buffer = packet.func_180735_b().copy()
+    this.buffer = new MCPacketBuffer(packet.func_180735_b().copy())
   }
 
   /**
@@ -59,5 +59,9 @@ export class PacketReader {
   readStringOrNull() {
     const exists = this.readBoolean()
     return exists ? this.readString() : null
+  }
+
+  release() {
+    this.buffer.release()
   }
 }

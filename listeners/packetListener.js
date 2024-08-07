@@ -5,5 +5,9 @@ const S3FPacketCustomPayload = Java.type("net.minecraft.network.play.server.S3FP
 
 register("packetReceived", mcPacket => {
   const packet = new PacketReader(mcPacket)
-  PacketRegistry.handleClientboundPacket(packet)
+  try {
+    PacketRegistry.handleClientboundPacket(packet)
+  } finally {
+    packet.release()
+  }
 }).setFilteredClass(S3FPacketCustomPayload)
