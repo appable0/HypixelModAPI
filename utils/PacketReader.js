@@ -9,7 +9,7 @@ const Unpooled = Java.type("io.netty.buffer.Unpooled")
 export class PacketReader {
   constructor(packet) {
     this.identifier = packet.func_149169_c()
-    this.buffer = packet.func_180735_b()
+    this.buffer = packet.func_180735_b().copy()
   }
 
   /**
