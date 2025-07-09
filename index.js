@@ -15,7 +15,7 @@ class ModAPI {
   }
 
   once(event, listener) {
-    emitter.on(event, listener)
+    emitter.once(event, listener)
   }
 
   off(event, listener) {
